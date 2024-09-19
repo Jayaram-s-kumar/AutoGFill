@@ -77,7 +77,7 @@ ${detailsString}
 Read the questions in the below array 
 ${arrString}
 
-And give me an answers array (not object array) in this format: [ans1,ans2,ans3....] If you can't
+And give me an answers array (not object array) in this format: ["ans1","ans2","ans3"....] If you can't
 find an ans for a question from the given details just give the ans as unknown`;
 
   console.log("Prompt:", prompt);
