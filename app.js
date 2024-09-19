@@ -18,24 +18,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 // Access your API key as an environment variable (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
-// const details = [
-//   { "Email *": "example@example.com" },
-//   { "Name of the Institution *": "XYZ College of Engineering" },
-//   { "Name of the concerned faculty *": "Prof. Anil Sharma" },
-//   { "Email Id (faculty) *": "anil.sharma@xyzcollege.edu" },
-//   { "Phone No (faculty) *": "+91 98765 43210" },
-//   { "Name of Participant 1 *": "Aarti Sharma" },
-//   { "Participant 1- Current Course which you are pursuing (eg: B.Tech, B.Com) *": "B.Tech" },
-//   { "Participant 1 - Gender *": "Female" },
-//   { "Participant 1 - Contact Number *": "+91 99887 65432" },
-//   { "Participant 1 - Email-id *": "aarti.sharma@xyzcollege.edu" },
-//   { "Name of Participant 2 *": "Ravi Patel" },
-//   { "Participant 2- Current Course which you are pursuing (eg: B.Tech, B.Com) *": "B.Com" },
-//   { "Participant 2- Gender *": "Male" },
-//   { "Participant 2- Contact Number *": "+91 99988 77665" },
-//   { "Participant 2- Email-id *": "ravi.patel@xyzcollege.edu" },
-//   { "Zone (Please choose a zone based on the location of your institution) *": "North Zone" }
-// ]
+
 
 const details= [
   {"Name":"Jayaram s kumar"},
@@ -44,6 +27,27 @@ const details= [
   {"email":"kumarjayaram545@gmail.com"},
   {"Name of Panchayath/Municipality/Corporation":"kayamkulam"},
   {"Name of college":"College of Engineering and Management Punnapra"},
+  {"Address":"Das bhavan, T.B Road, Kayamkulam"},
+  {"City":"Alappuzha"},
+  {"Pincode":"690502"},
+  {"Fathers name":"Sankar kumar"},
+  {"Mothers name":"Shyamala"},
+  {"Parent's contact number":"9633994286"},
+  {"Student's contact number":"7907144673"},
+  {"Degree ":"B. Tech"},
+  {"Branch":"Computer Science"},
+  {"CGPA":"6.5"},
+  {"If i have any backlogs?":"no"},
+  {"DWMS id":"KM01545831"},
+  {"College or University register number":"PRP20CS036"},
+  {"College or University admission number":"20042CSPRP"},
+  {"First name":"Jayaram"},
+  {"Middle name":"S"},
+  {"Last name":"Kumar"},
+  {"Permenant address":"Das bhavan, T.B Road, Kayamkulam"},
+  {"Residentail address":"Das bhavan, T.B Road, Kayamkulam"},
+
+  
 ]
 
 
