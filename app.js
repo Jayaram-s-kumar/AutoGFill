@@ -20,36 +20,21 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 
 
-const details= [
-  {"Name":"Jayaram s kumar"},
-  {"mobile number":"7907144673"},
-  {"whatusp number":"7907144673"},
-  {"email":"kumarjayaram545@gmail.com"},
-  {"Name of Panchayath/Municipality/Corporation":"kayamkulam"},
-  {"Name of college":"College of Engineering and Management Punnapra"},
-  {"Address":"Das bhavan, T.B Road, Kayamkulam"},
-  {"City":"Alappuzha"},
-  {"Pincode":"690502"},
-  {"Fathers name":"Sankar kumar"},
-  {"Mothers name":"Shyamala"},
-  {"Parent's contact number":"9633994286"},
-  {"Student's contact number":"7907144673"},
-  {"Degree ":"B. Tech"},
-  {"Branch":"Computer Science"},
-  {"CGPA":"6.5"},
-  {"If i have any backlogs?":"no"},
-  {"DWMS id":"KM01545831"},
-  {"College or University register number":"PRP20CS036"},
-  {"College or University admission number":"20042CSPRP"},
-  {"First name":"Jayaram"},
-  {"Middle name":"S"},
-  {"Last name":"Kumar"},
-  {"Permenant address":"Das bhavan, T.B Road, Kayamkulam"},
-  {"Residentail address":"Das bhavan, T.B Road, Kayamkulam"},
+const details= `Jayaram S Kumar is a B. Tech student majoring in Computer Science at the
+ College of Engineering and Management Punnapra. His CGPA is 6.5, and he has no backlogs.
+  Jayaram's college register number is PRP20CS036, and his admission number is 20042CSPRP.
+   His DWMS ID is KM01545831. He resides at Das bhavan, T.B Road, Kayamkulam, which is 
+   also his permanent address, located in Alappuzha city with the pincode 690502. 
+   This area falls under the Kayamkulam Panchayath/Municipality/Corporation. 
+   Jayaram can be contacted at his mobile and WhatsApp number 7907144673,
+    or via email at kumarjayaram545@gmail.com. His father, Sankar Kumar,
+     and mother, Shyamala, can be reached at 9633994286. Jayaram's 
+     college is situated in the city of Alappuzha.`
 
-  
-]
 
+app.get('/',(req,res)=>{
+  res.status(200).json({"message":"Autogfill server alive"})
+})
 
 
 app.post('/getans', async(req, res) => {
@@ -73,11 +58,11 @@ async function run(arr) {
   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
   // Stringify the arrays properly
-  const detailsString = JSON.stringify(details, null, 2);
+  // const detailsString = JSON.stringify(details, null, 2);
   const arrString = JSON.stringify(arr, null, 2);
 
   const prompt = `Based on these details given:
-${detailsString}
+${details}
 Read the questions in the below array 
 ${arrString}
 
@@ -92,4 +77,3 @@ find an ans for a question from the given details just give the ans as "unknown"
   console.log("Response:", text);
   return text;
 }
-// run();
